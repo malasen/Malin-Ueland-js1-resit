@@ -48,6 +48,12 @@ event.preventDefault();
     } else {
         emailError.style.display = "block";
     }
+    if (checkLength(firstName.value, 0) === true 
+        && validateEmail(email.value) === true 
+        && checkLength(message.value, 14) === true) {
+        contactForm.reset();
+        contactForm.innerHTML += "Thank you for your message!"
+    }
     
 }
 
@@ -65,6 +71,11 @@ function validateEmail(email) {
    return patternMatches;
  }
 
-contactForm.addEventListener("submit", validateForm) 
-    
+function messageSuccess() {
+
+}
+
+contactForm.addEventListener("submit", validateForm)
+
+
 
